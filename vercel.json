@@ -1,0 +1,30 @@
+{
+  "builds": [
+    {
+      "src": "*.html",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "users/*.html",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "img/*",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "css/*",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "api/*.js",
+      "use": "@vercel/node"
+    }
+  ],
+  "routes": [
+    { "src": "/img/(.*)", "dest": "/img/$1" },
+    { "src": "/css/(.*)", "dest": "/css/$1" },
+    { "src": "/users/(.*)", "dest": "/users/$1" },
+    { "src": "/(.*)", "dest": "/$1" }
+  ]
+}
